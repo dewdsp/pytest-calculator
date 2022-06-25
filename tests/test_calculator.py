@@ -1,5 +1,5 @@
 from unittest_1.calculator import Calculator, CalculatorError
-import pytest 
+import pytest, mock
 
 def test_Calculator_add():
   calculator = Calculator()
@@ -41,3 +41,12 @@ def test_Calculator_divide_by_zero():
   calculator = Calculator()
   with pytest.raises(CalculatorError):
     result = calculator.divide(9, 0)
+
+# def test_init():
+#   from unittest_1 import calculator
+#   with mock.patch.object(calculator, 'main', return_value=42):
+#     with mock.patch.object(calculator, '__name__', '__main__'):
+#       with mock.patch.object(calculator.sys,'exit') as mock_exit:
+#         calculator.init()    
+             
+#         assert mock_exit.call_args[0][0] == 42
